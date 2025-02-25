@@ -123,7 +123,7 @@ async function getCalendarStatus(
       minute: '2-digit',
       hour12: false,
     });
-    message += `\n${startStr} から ${endStr}`;
+    message += `\n${index + 1}. ${startStr} ~ ${endStr}`;
   });
   return message;
 }
