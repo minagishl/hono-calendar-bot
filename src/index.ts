@@ -107,7 +107,7 @@ async function getCalendarStatus(
   }
 
   // If the current time does not overlap with any meeting, return the number of meetings and the time of each meeting
-  let message = `本日は会議が${events.length}件入っていて\n`;
+  let message = `本日は会議が${events.length}件入っています\n`;
   events.forEach((event, index) => {
     const start = new Date(event.start.dateTime || event.start.date);
     const end = new Date(event.end.dateTime || event.end.date);
@@ -123,7 +123,7 @@ async function getCalendarStatus(
       minute: '2-digit',
       hour12: false,
     });
-    message += `\n${index + 1}. ${startStr} ~ ${endStr}`;
+    message += `\n${index + 1}件目 - ${startStr} から ${endStr} まで`;
   });
   return message;
 }
