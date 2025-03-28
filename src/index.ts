@@ -52,7 +52,7 @@ app.post('/webhook', async (c) => {
     })
   );
 
-  return c.status(200);
+  return c.json({ status: 'ok' }, 200);
 });
 
 const messageEventHandler = async (
