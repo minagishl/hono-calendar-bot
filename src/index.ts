@@ -77,7 +77,13 @@ const messageEventHandler = async (
     messages: [response],
   };
 
-  await client.replyMessage(replyMessageRequest);
+  try {
+    await client.replyMessage(replyMessageRequest);
+  } catch (error) {
+    console.error('Error sending message:', error);
+  }
+
+  return;
 };
 
 async function getCalendarStatus(
